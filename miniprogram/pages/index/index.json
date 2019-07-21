@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "lunpan": "../../components/lunpan/lunpan"
+  }
+}

@@ -1,0 +1,186 @@
+page {
+  background: #fff;
+}
+.container {
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1538027287&di=3e12493aaaf2f194e26bcc37919c7374&src=http://pic.58pic.com/58pic/13/79/47/18U58PICI9s_1024.jpg);
+  padding-bottom: 20px;
+}
+.header {
+  padding: 20px 0;
+}
+.header-title {
+  text-align: center;
+}
+
+/* 转盘 */
+.canvas-container {
+  margin: 0 auto;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.canvas-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: inherit;
+  background-clip: padding-box;
+  background-color: #0099CC;
+}
+.canvas-element {
+  position: relative;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.canvas-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 9999;
+}
+.canvas-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: bold;
+}
+.canvas-item-text {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transform-origin: 50% 150px;
+  transform-origin: 50% 150px;
+}
+
+/* 分隔线 */
+.canvas-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 99;
+}
+.canvas-litem {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  width: 1px;
+  height: 150px;
+  background-color: #FFFF33;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 150px;
+  transform-origin: 50% 150px;
+}
+
+/**
+* 抽奖按钮
+*/
+.canvas-btn {
+  position: absolute;
+  left: 110px;
+  top: 110px;
+  z-index: 400;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #f4e9cc;
+  background-color: #CCFF99;
+  line-height: 80px;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+.canvas-btn::after {
+  position: absolute;
+  display: block;
+  content: ' ';
+  left: 10px;
+  top: -46px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 30px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #CCFF99;
+}
+.canvas-btn.disabled {
+  pointer-events: none;
+  background: #b07a7b;
+  color: #ccc;
+}
+.canvas-btn.disabled::after {
+  border-bottom-color: #b07a7b;
+}
+
+
+.btn-wrap {
+  display: flex;
+  margin-top: 30px;
+}
+.btn-item {
+  width: 50%;
+  text-align: center;
+  border: 1px solid skyblue;
+  position: relative;
+  padding: 10px 0;
+}
+.input_item{
+  width: 60px;
+  padding: 0 10px;
+  font-size: 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.text_item {
+  display: block;
+  font-size: 14px;
+  width: 50px;
+  background-color: skyblue;
+  color: #fff;
+  margin: 0 auto;
+}
+.result_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.rewards-list {
+ 
+}
+.mask-item {
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 30%;
+  text-align: center;
+}
+.mask-text{
+  font-size: 30rpx;
+}
+.mask-input{
+ border: 1px solid #ccc;
+ font-size: 26rpx;
+}
+.btn-sub {
+  width: 200px;
+  margin-top: 20px;
+}

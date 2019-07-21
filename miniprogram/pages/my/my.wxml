@@ -1,0 +1,11 @@
+<view class='btn-wrap'>
+  <view class='wrap-top'>
+    
+    <view class='user-pic' style="background-image: url({{ userPic }})"></view>
+    <button wx:if="{{btnFlag}}" class="btn" open-type='getUserInfo' bindgetuserinfo="getInfo">获取个人信息</button>
+    <view class='user-name'>{{userName}}</view>
+  </view>
+  <view class='wrap-bottom'>
+    <!-- <view>常用分组</view> -->
+  </view>
+</view>
