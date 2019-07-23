@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "lunpan": "../../components/lunpan/lunpan"
-  }
+  },
+  "navigationBarTitleText":"首页"
 }

@@ -2,7 +2,7 @@
   <view class='wrap-top'>
     
     <view class='user-pic' style="background-image: url({{ userPic }})"></view>
-    <button wx:if="{{btnFlag}}" class="btn" open-type='getUserInfo' bindgetuserinfo="getInfo">获取个人信息</button>
+    <van-button type="primary" custom-class="btn" wx:if="{{btnFlag}}" open-type='getUserInfo' bindgetuserinfo="getInfo">获取个人信息</van-button>
     <view class='user-name'>{{userName}}</view>
   </view>
   <view class='wrap-bottom'>

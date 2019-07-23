@@ -1,9 +1,19 @@
 {
   "pages": [
-    "pages/index2/index2",
-    "pages/logs/logs",
     "pages/index/index",
+    "pages/logs/logs",
+    "pages/index2/index2",
     "pages/my/my"
+  ],
+  "subpackages":[
+    {
+      "root":"packageA",
+      "pages":[]
+    },
+    {
+      "root":"packageB",
+      "pages":[]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,18 +23,27 @@
   },
   "tabBar": {
     "color": "#000",
-    "selectedColor": "#7CFC00",
+    "selectedColor": "#1296db",
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index2/index2",
-        "text": "新建"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"/images/home.png",
+        "selectedIconPath":"/images/home_sel.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath":"/images/my.png",
+        "selectedIconPath":"/images/my_sel.png"
       }
     ]
+  },
+  "usingComponents": {
+    "van-row": "/lib/vant/dist/row/index",
+    "van-col": "/lib/vant/dist/col/index",
+    "van-icon": "/lib/vant/dist/icon/index"
   },
   "sitemapLocation": "sitemap.json"
 }

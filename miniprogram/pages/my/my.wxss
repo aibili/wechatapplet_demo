@@ -16,7 +16,6 @@ page {
   text-align: center;
 }
 .btn {
-  display: inline-block;
   margin-top: 30rpx;
 }
 .user-pic {
