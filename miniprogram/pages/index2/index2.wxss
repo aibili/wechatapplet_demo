@@ -2,8 +2,8 @@ page {
   background: #fff;
 }
 .container {
+  height: 100vh;
   background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1538027287&di=3e12493aaaf2f194e26bcc37919c7374&src=http://pic.58pic.com/58pic/13/79/47/18U58PICI9s_1024.jpg);
-  padding-bottom: 20px;
 }
 .header {
   padding: 20px 0;
@@ -45,7 +45,7 @@ page {
   top: 0;
   width: inherit;
   height: inherit;
-  z-index: 9999;
+  z-index: 999;
 }
 .canvas-item {
   position: absolute;
@@ -168,9 +168,6 @@ page {
  
 }
 .mask-item {
-  display: inline-block;
-  margin-left: 20rpx;
-  width: 30%;
   text-align: center;
 }
 .mask-text{
@@ -183,4 +180,34 @@ page {
 .btn-sub {
   width: 200px;
   margin-top: 20px;
+}
+.mask {
+  width: 600rpx;
+  background: #fff;
+  position: relative;
+}
+.mask-title{
+  position: relative;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-bottom: 10rpx solid #ccc;  
+}
+.mask-close {
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%);
+  padding: 20rpx;
+}
+.mask-content {
+  
+}
+.build-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.build-list {
+  padding: 30rpx;
 }

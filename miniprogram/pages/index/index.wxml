@@ -3,7 +3,7 @@
     <van-row>
       <van-col span="8">
         <view class="item-layout" bindtap="openItem">
-          <van-icon custom-class="iconfont fangxiang" />
+          <van-icon custom-class="iconfont fangxiang fangxiang-color" />
           <text class="item-text">选择困难</text>
         </view>
       </van-col>

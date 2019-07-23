@@ -24,7 +24,8 @@ Page({
       { 'index': 0, 'name': '默认' },
       { 'index': 1, 'name': '默认' }
     ],
-    startFlag:true
+    startFlag:true,
+    show: false
   },
 
   onReady: function (e) {
@@ -157,11 +158,15 @@ Page({
         this.awardsConfig.awards[i].name = e.detail.value[i];
     }
     this.drawAwardRoundel();
+    this.setData({ show: false });
   },
   randomNumber(){
     let min = 0;
     let max = this.awardsConfig.awards.length - 1;
     return Math.floor(Math.random() * (max - min + 1) + min);
+  },
+  openSetting() {
+    this.setData({ show: !this.data.show });
   }
 
 })

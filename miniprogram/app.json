@@ -43,7 +43,8 @@
   "usingComponents": {
     "van-row": "/lib/vant/dist/row/index",
     "van-col": "/lib/vant/dist/col/index",
-    "van-icon": "/lib/vant/dist/icon/index"
+    "van-icon": "/lib/vant/dist/icon/index",
+    "van-button": "/lib/vant/dist/button/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,20 +1,27 @@
 .wrap {
   height: 100vh;
-  background: #ccc;
+  background: #f5f2f2;
   padding-top: 50rpx;
   box-sizing: border-box;
 }
 .item-block {
   background: #fff;
-  padding: 50rpx;
+  padding: 50rpx 0;
+}
+.fangxiang-color {
+  background: #1296db;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 6rpx;
 }
 .item-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: skyblue;
   border-radius: 10rpx;
 }
 .item-text {
   font-size: 26rpx;
+  margin-top: 10rpx;
+  color: #ccc9c9;
 }

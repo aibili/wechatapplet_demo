@@ -1,20 +1,20 @@
 <view class="container">
-
+	<!-- 提示说明 -->
 	<view class="header">
 		<view class="header-title">总结选择困难户</view>
 		<view class="header-subtitle">步骤:</view> 
     <view>1.输入数字,生成多少个选择</view>
     <view>2.填写选项,补充选择的结果</view>
-    <view>3.开始转动,听天由命</view>
 	</view>
 
+	<!-- 轮盘 -->
 	<view class="main">
 		<view class="canvas-container">
 			<view  animation="{{animationData}}" class="canvas-content" >
 				<view class="canvas-line">
 					<view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
 				</view>
-        
+    
 				<view class="canvas-list">
 					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
 				  		<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
@@ -25,22 +25,41 @@
 			<view class="canvas-btn"></view>		
 		</view>
 	</view>
+
+	<!-- 按钮操作 -->
   <view class='btn-wrap'>
-  <view class='btn-item'>
-    <input type='number' placeholder='分成几份' class='input_item' bindinput="inputSet" value='{{inputText}}'></input>
-    <text class='text_item' bind:tap="build">生成</text>
-  </view>
-  <view class='btn-item result_item' bindtap='startRotate'>
-    <text>开始听天由命</text>
-  </view>
+		<view class='btn-item'>
+			<van-button plain type="primary" bindtap="openSetting">配置选项</van-button>
+		</view>
+		<view class='btn-item result_item' bindtap='startRotate'>
+			<van-button plain type="primary">开始转动</van-button>
+		</view>
+	</view>
 </view>
-<form bindsubmit="formSubmit">
-<view class='rewards-list'>
-  <view class='mask-item' wx:for="{{awards}}">
-    <text class='mask-text'>第{{index+1}}项</text>
-    <input type='text' class='mask-input' name="{{index}}"></input>
-  </view>
-</view>
-  <button formType="submit" class='btn-sub'>保存</button>
-</form>
-</view>
+
+<!-- 弹出层 -->
+<van-popup show="{{ show }}" z-index="999">
+	<view class="mask">
+		<view class="mask-title">
+			<text>配置</text>
+			<view class="mask-close" bindtap="openSetting">X</view>
+		</view>
+		<view class="mask-content">
+			<view class="build-item">
+				<input type='number' placeholder='分成几份' class='input_item' bindinput="inputSet" value='{{inputText}}'></input>
+				<van-button plain type="primary" bind:tap="build">生成几分</van-button>
+			</view>
+			<view class="build-list">
+				<form bindsubmit="formSubmit">
+					<view class='rewards-list'>
+						<view class='mask-item' wx:for="{{awards}}">
+							<text class='mask-text'>第{{index+1}}项</text>
+							<input type='text' class='mask-input' name="{{index}}"></input>
+						</view>
+					</view>
+					<button formType="submit" class='btn-sub'>保存</button>
+				</form>
+			</view>
+		</view>
+	</view>
+</van-popup>
