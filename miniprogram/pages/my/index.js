@@ -1,4 +1,5 @@
-// pages/my/my.js
+
+import api from '../../api/index';
 const app = getApp();
 Page({
   data: {
@@ -11,46 +12,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    if (!app.globalData.openId) {
-      wx.showLoading({
-        title: '登录中...',
-        mask: true
-      })
-      wx.cloud.callFunction({
-        name: 'login'
-      }).then(res => {
-        console.warn('登陆成功', res)
-        app.globalData.openId = res.result.openid;
-
-        wx.cloud.callFunction({
-          name: 'read',
-          data: {
-            openId: app.globalData.openId
-          }
-        }).then(res => {
-          console.warn('查询成功', res);
-          console.log(res);
-          // wx.hideLoading();
-          // if (!res.result.data.length){
-          //   that.setData({
-          //     btnFlag: true
-          //   });
-          // }else{
-          //   that.setData({
-          //     userPic: res.result.data[0].avatarUrl,
-          //     userName: res.result.data[0].nickName
-          //   })
-          // }
-        }).catch(err => {
-          console.warn('查询失败', err);
-          wx.hideLoading();
-        })
-
-      }).catch(err => {
-        console.log('登陆失败', err)
-      })
-    }
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    })
+     // 获取用户信息
+     wx.getSetting({
+      success: res => {
+        wx.hideLoading();
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                userPic: res.userInfo.avatarUrl,
+                userName: res.userInfo.nickName
+              })
+            }
+          })
+        }else{
+          this.setData({
+            btnFlag: true
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -102,29 +88,25 @@ Page({
 
   },
   getInfo(e){
-    let res = JSON.parse(e.detail.rawData);
-    let that = this;
-    wx.cloud.callFunction({
-      name: 'addUser',
-      data: {
-        openId: app.globalData.openId,
-        avatarUrl: res.avatarUrl,
-        city: res.city,
-        country: res.country,
-        gender: res.gender,
-        language: res.language,
-        nickName: res.nickName,
-        province: res.province
-
-      }
-    }).then(req => {
-      console.warn('插入成功',res)
-      
-      that.setData({
-        userPic: res.avatarUrl,
-        userName: res.nickName,
+    let userinfo = JSON.parse(e.detail.rawData);
+    api.addUser({
+      openId: app.globalData.openId,
+      avatarUrl: res.avatarUrl,
+      city: res.city,
+      country: res.country,
+      gender: res.gender,
+      language: res.language,
+      nickName: res.nickName,
+      province: res.province
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        userPic: userinfo.avatarUrl,
+        userName: userinfo.nickName,
         btnFlag: false
       })
-    });
+    }).catch(err => {
+      console.log(err);
+    })
   }
 })
