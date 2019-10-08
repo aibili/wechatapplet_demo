@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/index2/index2",
-    "pages/my/my"
+    "pages/my/index"
   ],
   "subpackages":[
     {
       "root":"packageA",
-      "pages":[]
+      "pages":[
+        "pages/chooseDifficult/index"
+      ]
     },
     {
       "root":"packageB",
@@ -33,7 +33,7 @@
         "selectedIconPath":"/images/home_sel.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/my/index",
         "text": "我的",
         "iconPath":"/images/my.png",
         "selectedIconPath":"/images/my_sel.png"

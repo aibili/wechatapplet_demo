@@ -1,9 +1,4 @@
 
-/**
- * 大转盘抽奖
- */
-
-var util = require("../../utils/util.js");
 var app = getApp();
 
 Page({
@@ -97,8 +92,8 @@ Page({
   },
 
   onShareAppMessage: function () {
-    var that = this;
-    return util.doShare("大转盘抽奖", "pages/zp/zp", that);
+    // var that = this;
+    // return util.doShare("大转盘抽奖", "pages/zp/zp", that);
   },
   build() {
     let buildNum = parseInt(this.data.inputText);

@@ -1,10 +1,6 @@
 // pages/my/my.js
 const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     userPic:'',
     userName:'',
@@ -34,17 +30,18 @@ Page({
           }
         }).then(res => {
           console.warn('查询成功', res);
-          wx.hideLoading();
-          if (!res.result.data.length){
-            that.setData({
-              btnFlag: true
-            });
-          }else{
-            that.setData({
-              userPic: res.result.data[0].avatarUrl,
-              userName: res.result.data[0].nickName
-            })
-          }
+          console.log(res);
+          // wx.hideLoading();
+          // if (!res.result.data.length){
+          //   that.setData({
+          //     btnFlag: true
+          //   });
+          // }else{
+          //   that.setData({
+          //     userPic: res.result.data[0].avatarUrl,
+          //     userName: res.result.data[0].nickName
+          //   })
+          // }
         }).catch(err => {
           console.warn('查询失败', err);
           wx.hideLoading();

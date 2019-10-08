@@ -15,7 +15,7 @@ Page({
   onShow: function () {},
   openItem(){
     wx.navigateTo({
-      url: '/pages/index2/index2'
+      url: '/packageA/pages/chooseDifficult/index'
     });
   }
 })
