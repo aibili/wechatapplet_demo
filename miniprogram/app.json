@@ -19,7 +19,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#000",
@@ -29,14 +30,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath":"/images/home.png",
-        "selectedIconPath":"/images/home_sel.png"
+        "iconPath":"/images/png/home.png",
+        "selectedIconPath":"/images/png/home_sel.png"
       },
       {
         "pagePath": "pages/my/index",
         "text": "我的",
-        "iconPath":"/images/my.png",
-        "selectedIconPath":"/images/my_sel.png"
+        "iconPath":"/images/png/my.png",
+        "selectedIconPath":"/images/png/my_sel.png"
       }
     ]
   },
@@ -44,7 +45,8 @@
     "van-row": "/lib/vant/dist/row/index",
     "van-col": "/lib/vant/dist/col/index",
     "van-icon": "/lib/vant/dist/icon/index",
-    "van-button": "/lib/vant/dist/button/index"
+    "van-button": "/lib/vant/dist/button/index",
+    "NavBar":"/components/NavBar/index"
   },
   "sitemapLocation": "sitemap.json"
 }

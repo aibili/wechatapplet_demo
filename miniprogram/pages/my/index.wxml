@@ -1,11 +1,24 @@
-<view class='btn-wrap'>
+<NavBar bg="{{bg}}" title="个人中心"></NavBar>
+<view class='header' style='padding-top:{{navbarHeight}}px'>
   <view class='wrap-top'>
-    
-    <view class='user-pic' style="background-image: url({{ userPic }})"></view>
+    <!-- <view class='user-pic' style="background-image: url({{ userPic }})"></view>
     <van-button type="primary" custom-class="btn" wx:if="{{btnFlag}}" open-type='getUserInfo' bindgetuserinfo="getInfo">获取个人信息</van-button>
-    <view class='user-name'>{{userName}}</view>
+    <view class='user-name'>{{userName}}</view> -->
+    <view class="user">
+      <van-icon wx:if="{{!authFlag}}" custom-class="user_logo" name="friends-o" size="30px" color="#4487FD"/>
+      <image wx:if="{{authFlag}}" class='user-pic' src="{{userPic}}"></image>
+      <van-button wx:if="{{!authFlag}}" plain type="info" class="user_message" open-type='getUserInfo' bindgetuserinfo="getInfo">点击登录</van-button>
+      <view wx:if="{{authFlag}}" class="user_message">
+        <view class="user_name">{{userName}}</view>
+      </view>
+    </view>
   </view>
-  <view class='wrap-bottom'>
-    <!-- <view>常用分组</view> -->
-  </view>
+</view>
+<view class='content'>
+  <van-panel title="常用服务">
+    <van-grid>
+      <van-grid-item icon="https://qwyimg.do1.com.cn/fileweb/upload/img/1dca4756172e43318391487a5a68d59c/20191010/40c2e3951e9c46baabea76f3e6da3f97.png" text="我的收藏" />
+      <van-grid-item icon="https://qwyimg.do1.com.cn/fileweb/upload/img/1dca4756172e43318391487a5a68d59c/20191010/754a8c9f67f642988659629e7e700a2b.png" text="咨询客服" />
+    </van-grid>
+  </van-panel>
 </view>

@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "van-button": "/lib/vant/dist/button/index"
+    "van-button": "/lib/vant/dist/button/index",
+    "van-panel": "/lib/vant/dist/panel/index",
+    "van-grid": "/lib/vant/dist/grid/index",
+    "van-grid-item": "/lib/vant/dist/grid-item/index"
   },
   "navigationBarTitleText":"我的"
 }

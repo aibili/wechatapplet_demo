@@ -1,0 +1,26 @@
+<view wx:if="{{ navShow }}" class="nav-wrap" style="height:{{ navHeight }}px;background:{{ bgOptions.color }};background-image:url('{{bgOptions.url}}');background-size: {{bgOptions.size}}" animation="{{animate}}">
+  <!-- 标题 -->
+  <view wx:if="{{ !hasSearch }}" class="nav-section" style="top:{{ statusbarHeight }}px;height:{{ deviceSystem === 'ios'? '40px':'48px'}};line-height:{{ deviceSystem === 'ios'? '40px':'48px' }};text-align:{{ titleAlign }};">
+    <text wx:if="{{ title }}" class="nav-title" style="margin-left:{{titleAlign == 'left'? '80rpx':'0'}};color:{{ titleColor }}">{{ title }}</text>
+    <image wx:if="{{ navBackFlag }}" src="{{ backUrl }}" mode="aspectFit" class="back" bindtap="navBack"></image>
+  </view>
+  <!-- 搜索框 -->
+  <view wx:if="{{ hasSearch }}" class='nav-section' style="top:{{ statusbarHeight }}px;height:{{ deviceSystem === 'ios'? '40px':'48px'}}">
+    <!-- 假的搜索框 -->
+    <view class="nav-search_show" bindtap="handleClick" hidden="{{ searchShow }}" style="width:{{ searchOptions.width }};left:{{ searchOptions.left }}">
+      <view class="nav-search" type="text" style="height:{{ searchOptions.height }}"></view>
+      <view class="nav-search_title">
+        <image src='/images/png/icon_search.png' class='icon-search'></image>
+        <text class='icon-search_text'>{{ searchOptions.placeholder }}</text>
+      </view>
+    </view>
+    <!-- 真的搜索框 -->
+    <view class="nav-search_show nav-search_use" style="width:{{ searchOptions.width }};left:{{ searchOptions.left }};visibility:{{searchShow? 'visible':'hidden'}}">
+      <input class="nav-search" style="height:{{ searchOptions.height }}" type="text" placeholder="{{ searchOptions.placeholder }}" placeholder-class="search-placeholder" focus="{{ searchShow }}" bindblur="emitBlurEvent" adjust-position="{{ false }}" value="{{ searchText }}"
+        bindinput="handleValue" />
+      <image src="/images/png/icon_search.png" class="icon-search"></image>
+      <image hidden="{{ !searchText }}" src="/images/png/icon_search_del.png" class="icon-search_del" bindtap="clearSearch"></image>
+    </view>
+    <image wx:if="{{ navBackFlag }}" src="{{ backUrl }}" mode="aspectFit" class="back" bindtap="navBack"></image>
+  </view>
+</view>

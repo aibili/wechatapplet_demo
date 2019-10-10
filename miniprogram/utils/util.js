@@ -1,19 +1,14 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+// 判断手机型号是否属于iPhoneX / iPhoneXS / iPhoneXR / iPhoneXS MAX
+function isIphoneX() {
+  const reg = /iPhone X/;
+  try {
+    const model = wx.getSystemInfoSync().model;
+    return reg.test(model);
+  } catch (error) {
+    console.error(error)
+  }
 }
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-module.exports = {
-  formatTime: formatTime
+export default {
+  isIphoneX
 }

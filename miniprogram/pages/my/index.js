@@ -3,9 +3,13 @@ import api from '../../api/index';
 const app = getApp();
 Page({
   data: {
+    bg: {
+      color: 'rgba(255,255,255,0)'
+    },
+    navbarHeight: app.globalData.navbarHeight,
     userPic:'',
     userName:'',
-    btnFlag: false
+    authFlag: false
   },
 
   /**
@@ -25,14 +29,11 @@ Page({
           wx.getUserInfo({
             success: res => {
               this.setData({
+                authFlag: true,
                 userPic: res.userInfo.avatarUrl,
                 userName: res.userInfo.nickName
               })
             }
-          })
-        }else{
-          this.setData({
-            btnFlag: true
           })
         }
       }
@@ -88,22 +89,26 @@ Page({
 
   },
   getInfo(e){
+    wx.showLoading({
+      title: '登录中...',
+      mask: true
+    })
     let userinfo = JSON.parse(e.detail.rawData);
     api.addUser({
       openId: app.globalData.openId,
-      avatarUrl: res.avatarUrl,
-      city: res.city,
-      country: res.country,
-      gender: res.gender,
-      language: res.language,
-      nickName: res.nickName,
-      province: res.province
+      avatarUrl: userinfo.avatarUrl,
+      city: userinfo.city,
+      country: userinfo.country,
+      gender: userinfo.gender,
+      language: userinfo.language,
+      nickName: userinfo.nickName,
+      province: userinfo.province
     }).then(res => {
-      console.log(res);
+      wx.hideLoading();
       this.setData({
         userPic: userinfo.avatarUrl,
         userName: userinfo.nickName,
-        btnFlag: false
+        authFlag: true
       })
     }).catch(err => {
       console.log(err);
