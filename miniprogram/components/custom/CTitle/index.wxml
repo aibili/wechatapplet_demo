@@ -1,0 +1,30 @@
+<view style="position:relative;">
+  <view class="qwui-website_title" style="background:#fff;padding-top:24rpx;padding-right:28rpx;padding-bottom:28rpx;padding-left:24rpx;" bindtap='openLink'>
+    <!-- 模板1 -->
+    <view wx:if="{{config.type==='1'}}" style="text-align:left">
+      <text style="color:#000;font-size:40rpx;">{{content}}</text>
+    </view>
+    <!-- 模板2 -->
+    <view wx:if="{{config.type==='2'}}" class='qwui-website_title_type2'>
+      <text class='qwui-line'></text>
+      <text class="qwui-title2" style="color:#000;font-size:40rpx;">{{content}}</text>
+      <text class='qwui-line'></text>
+    </view>
+    <!-- 模板3 -->
+    <view wx:if="{{config.type==='3'}}" class='qwui-website_title_type3'>
+      <view class='qwui-website_title_type3_left'>
+        <view class="qwui-line3" style='height:{{detail.ftSize*2-6}}rpx;'></view>
+        <text class='qwui-title3' style="color:#000;font-size:40rpx;">{{content}}</text>
+      </view>
+      <text class='qwui-right_text'>查看更多</text>
+    </view>
+    <!-- 模板4 -->
+    <view wx:if="{{config.type==='4'}}" class='qwui-website_title_type3'>
+      <view class='qwui-website_title_type3_left'>
+        <view class="qwui-line3" style='height:{{detail.ftSize*2-6}}rpx;'></view>
+        <text class='qwui-title3' style="color:#000;font-size:40rpx;">{{content}}</text>
+      </view>
+      <image class='qwui-right_image' src='/images/png/icon_right.png'></image>
+    </view>
+  </view>
+</view>

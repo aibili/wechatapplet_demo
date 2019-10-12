@@ -1,0 +1,27 @@
+<view class="qwui-website_swiper">
+  <swiper class="qwui-swiper_wrap" autoplay="{{true}}" circular="{{ true }}" interval="2000" bindchange="swiperChange" style='height:400rpx; font-size:0;'>
+    <block wx:for="{{ detail }}" wx:key="{{ item }}">
+      <swiper-item>
+        <view style="position:relative;">
+          <image bindtap='openLink' data-index="{{index}}" wx:if="{{item.src}}" bindload="swiperImgLoad" data-index="{{index}}" data-img_w="{{750}}" lazy-load src="{{ item.src }}" class="qwui-slide_image" mode="aspectFill" style="height:400rpx;width:100%;"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 指示器模板1 -->
+  <view wx:if="{{config.type==='1'&&detail.length>1}}" class="qwui-swiper_dots" style='bottom:12rpx;'>
+    <block wx:for="{{ detail }}" wx:key="{{ index }}">
+      <view style="background:{{ index == currentIndex ? '#5979F1' : '#fff'}}" class="qwui-swiper_dot1 {{ index == currentIndex ? 'qwui-dot1_active' : ''}}"></view>
+    </block>
+  </view>
+  <!-- 指示器模板2 -->
+  <view wx:if="{{config.type==='2'&&detail.length>1}}" class="qwui-swiper_dots" style='bottom:12rpx;'>
+    <block wx:for="{{ detail }}" wx:key="{{ index }}">
+      <view style="background:{{ index == currentIndex ? '#5979F1' : '#fff'}}" class="qwui-swiper_dot2 {{ index == currentIndex ? 'qwui-dot2_active' : ''}}"></view>
+    </block>
+  </view>
+  <!-- 指示器模板3 -->
+  <view wx:if="{{config.type==='3'&&detail.length>1}}" class="qwui-swiper_dot3" style='bottom:12rpx;'>
+    <text class='qwui-swiper_dot3_text'>{{currentIndex+1}}/{{detail.length}}</text>
+  </view>
+</view>

@@ -1,6 +1,11 @@
 {
   "usingComponents": {
-    "lunpan": "../../components/lunpan/lunpan"
-  },
-  "navigationBarTitleText":"首页"
+    "lunpan": "../../components/lunpan/lunpan",
+    "CSwiper":"../../components/custom/CSwiper/index",
+    "CTitle":"../../components/custom/CTitle/index",
+    "CCrossSlip":"../../components/custom/CCrossSlip/index",
+    "CImage":"../../components/custom/CImage/index",
+    "CGrid":"../../components/custom/CGrid/index",
+    "CProduct":"../../components/custom/CProduct/index"
+  }
 }

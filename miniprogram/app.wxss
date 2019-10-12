@@ -7,42 +7,5 @@
   justify-content: space-between;
   box-sizing: border-box;
 }  */
-@font-face {
-  font-family: 'iconfont';  /* project id 1310915 */
-  src: url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.eot');
-  src: url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1310915_yjtzscmiueb.svg#iconfont') format('svg');
-}
-
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.iconshouye:before {
-  content: "\e612";
-}
-
-.iconwode1:before {
-  content: "\e62e";
-}
-
-.iconshouye-copy:before {
-  content: "\e613";
-}
-
-.iconwode1-copy:before {
-  content: "\e62f";
-}
-
-.fangxiang:before {
-  content: "\e632";
-}
 
 

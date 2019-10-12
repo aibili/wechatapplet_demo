@@ -89,6 +89,7 @@ Page({
 
   },
   getInfo(e){
+    if(Object.keys(e.detail).length == 1) return;
     wx.showLoading({
       title: '登录中...',
       mask: true

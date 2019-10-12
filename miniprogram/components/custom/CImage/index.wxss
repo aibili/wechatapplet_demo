@@ -1,0 +1,37 @@
+.qwui-website_image {
+  width: 100vw;
+  box-sizing: border-box;
+  font-size: 0;
+}
+/* .qwui-website_image image{
+  display: block;
+} */
+
+.qwui-website_image_1 {
+  display: flex;
+  align-items: center;
+}
+
+.qwui-website_image_1 .qwui-honor_img {
+  width: 100%;
+  display: block;
+}
+
+.qwui-website_image_1_item:last-of-type {
+  margin-right: 0 !important;
+}
+
+.qwui-website_image_2, .qwui-website_image_3 {
+  width: 100%;
+  display: flex;
+}
+
+.qwui-website_image_3 {
+  flex-direction: column;
+}
+.flex_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

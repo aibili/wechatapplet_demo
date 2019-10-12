@@ -14,13 +14,15 @@ VantComponent({
         dot: Boolean,
         info: null,
         text: String,
-        useSlot: Boolean
+        useSlot: Boolean,
+        size: String
     },
     mounted() {
         this.updateStyle();
     },
     methods: {
         updateStyle() {
+            console.log(this.text);
             if (!this.parent) {
                 return;
             }

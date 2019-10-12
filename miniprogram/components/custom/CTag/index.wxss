@@ -1,0 +1,139 @@
+.qwui-tag {
+  position: absolute;
+}
+
+/* 角标-新品 */
+
+.qwui-tag-type_1 {
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0px 24rpx 0px;
+  font-family: MicrosoftYaHeiUI;
+}
+
+.qwui-tag-type_1_large {
+  padding: 0 8px;  
+  height: 48rpx;
+  font-size: 26rpx;
+}
+
+.qwui-tag-type_1_medium {
+  padding: 0 16rpx;  
+  height: 40rpx;
+  font-size: 22rpx;
+}
+
+/* 角标-NEW */
+
+.qwui-tag-type_2 {
+  left: 0;
+  top: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: MicrosoftYaHeiUI;
+}
+
+.qwui-tag-type_2_large {
+  position: absolute;
+  padding: 0 16rpx; 
+  height: 48rpx;
+  border-radius: 0 24rpx 24rpx 0;
+  font-size: 24rpx;
+}
+
+.qwui-tag-type_2_medium {
+  padding: 0 16rpx; 
+  height: 40rpx;
+  border-radius: 0 20rpx 20rpx 0;
+  font-size: 22rpx;
+}
+
+/* 角标-热卖*/
+
+.qwui-tag-type_3 {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 8rpx 8rpx;
+  font-family: MicrosoftYaHeiUI;
+}
+
+.qwui-tag-type_3_large {
+  left: 10rpx;
+  position: absolute;
+  padding: 0 16rpx;
+  height: 48rpx;
+  font-size: 26rpx;
+}
+
+.qwui-tag-type_3_medium {
+  left: 6rpx;
+  padding: 0 16rpx;
+  height: 42rpx;
+  font-size: 22rpx;
+}
+
+/* 角标-HOT*/
+
+.qwui-tag-type_4_wrap {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.qwui-tag-type_4_wrap_large {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.qwui-tag-type_4_wrap_medium {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.qwui-tag-type_4 {
+  left: -35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: MicrosoftYaHeiUI;
+  transform: rotate(-45deg);
+}
+
+.qwui-tag-type_4_large {
+  top: 15rpx;
+  width: 140rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+}
+
+.qwui-tag-type_4_medium {
+  top: 9rpx;
+  width: 120rpx;
+  height: 40rpx;
+  font-size: 22rpx;
+}
+
+/* 自定义角标 */
+
+.qwui-tag-type_5 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.qwui-tag-type_5_large {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.qwui-tag-type_5_medium {
+  width: 80rpx;
+  height: 80rpx;
+}

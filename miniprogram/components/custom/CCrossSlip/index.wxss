@@ -1,0 +1,11 @@
+.qwui-website_crossslip {
+  display: flex;
+  white-space: nowrap;
+}
+
+.qwui-website_crossslip .qwui-slide_image {
+  height: 0;
+  display: inline-block;
+  vertical-align:top;
+}
+

@@ -1,0 +1,6 @@
+.grid_text {
+  font-size: 24rpx;
+  margin-top: 18rpx;
+}
+
+

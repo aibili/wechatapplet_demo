@@ -1,19 +1,14 @@
 .wrap {
-  height: 100vh;
+  /* height: 100vh;
   background: #f5f2f2;
   padding-top: 50rpx;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 .item-block {
   background: #fff;
   padding: 50rpx 0;
 }
-.fangxiang-color {
-  background: #1296db;
-  color: #fff;
-  padding: 10rpx;
-  border-radius: 6rpx;
-}
+
 .item-layout {
   display: flex;
   flex-direction: column;

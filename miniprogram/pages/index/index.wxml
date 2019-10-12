@@ -1,5 +1,6 @@
-<view class="wrap">
-  <view class="item-block">
+<NavBar bg="{{bg}}" title="首页"></NavBar>
+<view class="wrap" style='padding-top:{{navbarHeight}}px'>
+  <!-- <view class="item-block">
     <van-row>
       <van-col span="8">
         <view class="item-layout" bindtap="openItem">
@@ -8,5 +9,17 @@
         </view>
       </van-col>
     </van-row>
-  </view>
+  </view> -->
+  <!-- <CSwiper></CSwiper>
+  <CTitle></CTitle>
+  <CCrossSlip></CCrossSlip>
+  <CImage></CImage> -->
+  <!-- <van-grid column-num="2" square>
+    <van-grid-item icon="photo-o" text="这是导航a" />
+    <van-grid-item icon="photo-o" text="文字" />
+    <van-grid-item icon="photo-o" text="文字" />
+  </van-grid> -->
+  <CGrid></CGrid>
+  <CGrid></CGrid>
+  <CProduct></CProduct>
 </view>

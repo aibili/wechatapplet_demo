@@ -1,0 +1,7 @@
+<scroll-view scroll-x style='height:300rpx;'>
+  <view class="qwui-website_crossslip">
+    <view style="position:relative;" wx:for="{{ detail }}" wx:key="{{ item }}">
+      <image wx:if="{{item.src}}" class="qwui-slide_image" bindload="swiperImgLoad" data-img_h="300" src="{{ item.src }}" bindtap='openLink' data-index="{{index}}" style='height:300rpx;width:{{opt[index].imgWidth}}rpx;'></image>
+    </view>
+  </view>
+</scroll-view>
