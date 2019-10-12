@@ -8,18 +8,3 @@
 <view wx:if="{{config.type&&config.type==='4'}}" class='qwui-tag-type_4_wrap qwui-tag-type_4_wrap_medium'>
   <view class='qwui-tag qwui-tag-type_4 qwui-tag-type_4_medium' style="background:{{config.bgcolor}};color:{{config.color}}">HOT</view>
 </view>
-<wxs module='filter'>
-  function tagText(type = 1) {
-    var object = {
-      '1': '还剩最后10天!!!',
-      '2': 'NEW',
-      '3': '热卖',
-      '4': 'HOT'
-    }
-    return object[type] || ''
-  }
-
-  module.exports = {
-    tagText: tagText
-  }
-</wxs>

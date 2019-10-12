@@ -11,7 +11,7 @@ Component({
         isDisplayProductName: 1,
         isDisplayProductDetail: 1,
         isDisplayProductPrice: 1,
-        listTemplate: 1 //哪个模板
+        listTemplate: 5 //哪个模板
       }
     },
     detail: {
@@ -50,6 +50,40 @@ Component({
         productPrice: "0.01",
         productPriceLine: "1.00",
         refId: "481225325dd2455f9f6b72322c5bc529",
+        type: 1
+      },
+      {
+        componentId: "37a23e3bc4b34099aa5e8eb4f142cb48",
+        cover: "https://qwyimg.do1.com.cn/fileweb/upload/img/1dca4756172e43318391487a5a68d59c/20190805/108845bdf82242dda9f3cfc79825b7cc.jpeg",
+        id: "f3ade0ed8eee47aaac5be4c2a2e5d98d",
+        mark: {
+          size: 'large',
+          type: '1',
+          text: '文案文案',
+          color: '#fff',
+          bgcolor:'#000'
+        },
+        numLimit: 50,
+        productName: "多规格_展示型",
+        productDetail: "这里是详情这里是详情这里是详情这里是详情这里是详情",
+        refId: "f8c1c6e773e24c3fadcd2080163402f4",
+        type: 1
+      },
+      {
+        componentId: "37a23e3bc4b34099aa5e8eb4f142cb48",
+        cover: "https://qwyimg.do1.com.cn/fileweb/upload/img/1dca4756172e43318391487a5a68d59c/20190805/108845bdf82242dda9f3cfc79825b7cc.jpeg",
+        id: "f3ade0ed8eee47aaac5be4c2a2e5d98d",
+        mark: {
+          size: 'large',
+          type: '1',
+          text: '文案文案',
+          color: '#fff',
+          bgcolor:'#000'
+        },
+        numLimit: 50,
+        productName: "多规格_展示型",
+        productDetail: "这里是详情这里是详情这里是详情这里是详情这里是详情",
+        refId: "f8c1c6e773e24c3fadcd2080163402f4",
         type: 1
       },
       {

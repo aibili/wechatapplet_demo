@@ -20,9 +20,10 @@
     </view>
     <!-- 样式模板2 -->
     <view wx:if="{{config.listTemplate === 2}}" class="qwui-product_item2" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice&&!item.productPriceLine)?0:24}}rpx;">
-      <CTag type="{{item.mark}}"></CTag>
-      <image style="height:{{config.aspectRatio===3?'516':'344'}}rpx;" class="qwui-product_post2" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
+      <CTag config="{{item.mark}}"></CTag>
+      <image style="height:344rpx;" class="qwui-product_post2" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
       <view class="qwui-product_title2" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
+      <view class="qwui-product_detail qwui-product_detail2" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
       <view class="qwui-product_price2" wx:if="{{config.isDisplayProductPrice}}">
         <view class='qwui-product_prices2_left'>
           <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
@@ -36,10 +37,11 @@
       </view>
     </view>
     <!-- 样式模板3 -->
-    <view wx:if="{{config.listTemplate === 3}}" class="qwui-product_item3" wx:for="{{ list }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice&&!item.productPriceLine)?0:24}}rpx;">
+    <view wx:if="{{config.listTemplate === 3}}" class="qwui-product_item3" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice&&!item.productPriceLine)?0:24}}rpx;">
       <CTag type="{{item.mark}}"></CTag>
-      <image style="height:{{config.aspectRatio===2?'224':'336'}}rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
+      <image style="height:224rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
       <view class="qwui-product_title3" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
+      <view class="qwui-product_detail qwui-product_detail3" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
       <view class="qwui-product_price3" wx:if="{{config.isDisplayProductPrice}}">
         <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
         <text class="qwui-product_current3" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
@@ -75,8 +77,9 @@
       <view style='padding-bottom:16rpx;display:flex;'>
         <view wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" class="qwui-product_item5" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice)?0:24}}rpx;margin-right:{{index===detail.length-1?24:0}}rpx">
           <CTag type="{{item.mark}}"></CTag>
-          <image style="height:{{config.aspectRatio===2?'224':'336'}}rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
+          <image style="height:224rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
           <view class="qwui-product_title3" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
+          <view class="qwui-product_detail qwui-product_detail5" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
           <view class="qwui-product_price3" wx:if="{{config.isDisplayProductPrice}}">
             <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
             <text class="qwui-product_current3" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
