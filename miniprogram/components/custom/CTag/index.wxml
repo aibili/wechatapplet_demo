@@ -1,8 +1,8 @@
 <!-- 角标:1=>新品 2=>NEW 3=>热卖 4=>HOT -->
 <view wx:if="{{config.type&&config.type!=='4'}}" class='qwui-tag qwui-tag-type_{{config.type}} qwui-tag-type_{{config.type}}_{{config.size}}' style="background:{{config.bgcolor}};color:{{config.color}}">
-  <text style="margin-left:{{config.type==='1'||config.type==='2'?-6:0}}rpx;">{{config.text}}</text>
+  <text wx:if="{{config.type!=='5'}}" style="margin-left:{{config.type==='1'||config.type==='2'?-6:0}}rpx;">{{config.text}}</text>
   <!-- 自定义图片需要单独处理 -->
-  <image wx:if="{{src}}" src='{{src}}' mode='aspectFill' class='qwui-tag-type_5 qwui-tag-type_5_{{config.size}}'></image>
+  <image wx:if="{{config.src}}" src='{{config.src}}' mode='aspectFill' class='qwui-tag-type_5 qwui-tag-type_5_{{config.size}}'></image>
 </view>
 <!-- HOT角标 -->
 <view wx:if="{{config.type&&config.type==='4'}}" class='qwui-tag-type_4_wrap qwui-tag-type_4_wrap_medium'>

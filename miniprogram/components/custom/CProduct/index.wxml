@@ -5,85 +5,131 @@
     <view wx:if="{{config.listTemplate === 1}}" class="qwui-product_item" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo">
       <CTag config="{{item.mark}}"></CTag>
       <image style="height:346rpx;" class="qwui-product_post" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
-      <view class="qwui-product_title" wx:if="{{config.isDisplayProductName}}" style="margin-top:30rpx;margin-bottom:30rpx;">{{ item.productName }}</view>
-      <view class="qwui-product_detail" wx:if="{{config.isDisplayProductDetail}}" style="margin-bottom:{{config.isDisplayProductPrice&&(item.productPrice||item.productPriceLine)?'0':'30'}}rpx;">{{ item.productDetail }}</view>
-      <view class="qwui-product_price" wx:if="{{config.isDisplayProductPrice&&(item.productPrice||item.productPriceLine)}}" style="padding-bottom:24rpx;">
-        <text class="qwui-product-dollar" wx:if="{{ item.productPrice}}">￥</text>
-        <text class="qwui-product_current" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
-        <text class="qwui-product_decimals" wx:if="{{ item.productPrice}}">.{{ filter.getDecimals(item.productPrice) }}</text>
-
-        <view class="qwui-product_original" wx:if="{{ item.productPriceLine }}">
-          <text class="qwui-product-dollar" wx:if="{{ item.productPriceLine}}">￥</text>
-          <text class="qwui-product_current" wx:if="{{ item.productPriceLine}}">{{ item.productPriceLine }}</text>
+      <view class="qwui-product_title" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
+      <view class="qwui-product_detail" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
+      <view class="qwui-product_price" wx:if="{{config.isDisplayProductPrice}}">
+        <text class="qwui-product-dollar">￥</text>
+        <text class="qwui-product_current">{{ filter.getPrice(item.price.current) }}</text>
+        <text class="qwui-product_decimals">.{{ filter.getDecimals(item.price.current) }}</text>
+        <view class="qwui-product_original" wx:if="{{item.price.delete}}">
+          <text class="qwui-product-dollar">￥</text>
+          <text class="qwui-product_current">{{ item.price.delete }}</text>
         </view>
+      </view>
+      <view wx:if="{{config.isDisplayProductMessage}}" class="product_message">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+          <view style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
+        </block>
+      </view>
+      <view class="product_total" style="font-size:{{item.statistics.size}}rpx">
+        <van-icon custom-class="product_total_icon" name="{{item.statistics.name}}" color="{{item.statistics.color}}"/>
+        <text class="product_total_number">1000</text>
       </view>
     </view>
     <!-- 样式模板2 -->
-    <view wx:if="{{config.listTemplate === 2}}" class="qwui-product_item2" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice&&!item.productPriceLine)?0:24}}rpx;">
+    <view wx:if="{{config.listTemplate === 2}}" class="qwui-product_item2" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo">
       <CTag config="{{item.mark}}"></CTag>
       <image style="height:344rpx;" class="qwui-product_post2" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
       <view class="qwui-product_title2" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
-      <view class="qwui-product_detail qwui-product_detail2" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
+      <view class="qwui-product_detail qwui-product_detail2" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
       <view class="qwui-product_price2" wx:if="{{config.isDisplayProductPrice}}">
         <view class='qwui-product_prices2_left'>
-          <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
-          <text class="qwui-product_current2" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
-          <text class="qwui-product_decimals2" wx:if="{{ item.productPrice}}">.{{ filter.getDecimals(item.productPrice) }}</text>
-        </view>
-        <view class="qwui-product_original2" wx:if="{{ item.productPriceLine }}">
           <text class="qwui-product-dollar2">￥</text>
-          <text class="qwui-product_current2">{{ item.productPriceLine }}</text>
+          <text class="qwui-product_current2">{{ filter.getPrice(item.price.current) }}</text>
+          <text class="qwui-product_decimals2">.{{ filter.getDecimals(item.price.current) }}</text>
         </view>
+        <view class="qwui-product_original2" wx:if="{{ item.price.delete }}">
+          <text class="qwui-product-dollar2">￥</text>
+          <text class="qwui-product_current2">{{ item.price.delete }}</text>
+        </view>
+      </view>
+      <view wx:if="{{config.isDisplayProductMessage}}" class="product_message2">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+          <view style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
+        </block>
+      </view>
+      <view class="product_total product_total2" style="font-size:{{item.statistics.size}}rpx">
+        <van-icon custom-class="product_total_icon" name="{{item.statistics.name}}" color="{{item.statistics.color}}"/>
+        <text class="product_total_number">1000</text>
       </view>
     </view>
     <!-- 样式模板3 -->
-    <view wx:if="{{config.listTemplate === 3}}" class="qwui-product_item3" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice&&!item.productPriceLine)?0:24}}rpx;">
-      <CTag type="{{item.mark}}"></CTag>
+    <view wx:if="{{config.listTemplate === 3}}" class="qwui-product_item3" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo">
+      <CTag config="{{item.mark}}"></CTag>
       <image style="height:224rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
       <view class="qwui-product_title3" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
-      <view class="qwui-product_detail qwui-product_detail3" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
+      <view class="qwui-product_detail qwui-product_detail3" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
       <view class="qwui-product_price3" wx:if="{{config.isDisplayProductPrice}}">
-        <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
-        <text class="qwui-product_current3" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
-        <text class="qwui-product_decimals3" wx:if="{{ item.productPrice}}">.{{ filter.getDecimals(item.productPrice) }}</text>
+        <text class="qwui-product-dollar2">￥</text>
+        <text class="qwui-product_current3">{{ filter.getPrice(item.price.current) }}</text>
+        <text class="qwui-product_decimals3">.{{ filter.getDecimals(item.price.current) }}</text>
+      </view>
+      <view wx:if="{{config.isDisplayProductMessage}}" class="product_message3">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+          <view class="product_message3_message" style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
+        </block>
+      </view>
+      <view class="product_total product_total3" style="font-size:{{item.statistics.size}}rpx">
+        <van-icon custom-class="product_total_icon" name="{{item.statistics.name}}" color="{{item.statistics.color}}"/>
+        <text class="product_total_number">1000</text>
       </view>
     </view>
     <!-- 样式模板4 -->
     <view wx:if="{{config.listTemplate === 4}}" class="qwui-product_item4" wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo">
       <view style='margin: 18rpx 32rpx 18rpx 18rpx;'>
         <view style='position:relative;overflow:hidden;'>
-          <CTag type="{{item.mark}}"></CTag>
+          <CTag config="{{item.mark}}"></CTag>
           <image class="qwui-product_post4" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
         </view>
       </view>
       <view class='qwui-product_right'>
         <view class="qwui-product_title4" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
+        <view class="qwui-product_detail qwui-product_detail4" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
+        <view class="qwui-product_tag">
+          <block wx:for="{{item.tags.value}}" wx:for-item="tag">
+            <van-tag wx:if="{{tag.type == 'plain'}}" plain color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
+            <van-tag wx:if="{{tag.type == 'round'}}" round color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
+            <van-tag wx:if="{{tag.type == 'mark'}}" mark color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
+          </block>
+        </view>
         <view class="qwui-product_price4" wx:if="{{config.isDisplayProductPrice}}">
           <view class='qwui-product_prices2_left'>
-            <text class="qwui-product-dollar4" wx:if="{{ item.productPrice}}">￥</text>
-            <text class="qwui-product_current4" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
-            <text class="qwui-product_decimals4" wx:if="{{ item.productPrice}}">.{{ filter.getDecimals(item.productPrice) }}</text>
-          </view>
-          <view class="qwui-product_original4" wx:if="{{ item.productPriceLine }}">
             <text class="qwui-product-dollar4">￥</text>
-            <text class="qwui-product_current4">{{item.productPriceLine }}</text>
+            <text class="qwui-product_current4">{{ filter.getPrice(item.price.current) }}</text>
+            <text class="qwui-product_decimals4">.{{ filter.getDecimals(item.price.current) }}</text>
+          </view>
+          <view class="qwui-product_original4" wx:if="{{ item.price.delete }}">
+            <text class="qwui-product-dollar4">￥</text>
+            <text class="qwui-product_current4">{{item.price.delete }}</text>
+          </view>
+          <view class="product_total4" style="font-size:{{item.statistics.size}}rpx">
+            <van-icon custom-class="product_total_icon" name="{{item.statistics.name}}" color="{{item.statistics.color}}"/>
+            <text class="product_total_number">1000</text>
           </view>
         </view>
-        <view wx:if="{{!config.isDisplayProductPrice}}"></view>
       </view>
     </view>
     <!-- 样式模板5 -->
     <scroll-view wx:if="{{config.listTemplate === 5}}" scroll-x class="qwui-product_item5_wrap">
       <view style='padding-bottom:16rpx;display:flex;'>
-        <view wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" class="qwui-product_item5" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo" style="padding-bottom:{{!config.isDisplayProductName&&(!config.isDisplayProductPrice||config.isDisplayProductPrice&&!item.productPrice)?0:24}}rpx;margin-right:{{index===detail.length-1?24:0}}rpx">
-          <CTag type="{{item.mark}}"></CTag>
+        <view wx:for="{{ detail }}" wx:key="{{ item.refId||item.id }}" class="qwui-product_item5" data-id="{{ item.refId||item.id }}" bindtap="navigateToInfo">
+          <CTag config="{{item.mark}}"></CTag>
           <image style="height:224rpx;" class="qwui-product_post3" src="{{ item.cover }}" lazy-load mode="aspectFill"></image>
           <view class="qwui-product_title3" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
-          <view class="qwui-product_detail qwui-product_detail5" wx:if="{{config.isDisplayProductDetail}}">{{ item.productDetail }}</view>
+          <view class="qwui-product_detail qwui-product_detail5" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
           <view class="qwui-product_price3" wx:if="{{config.isDisplayProductPrice}}">
-            <text class="qwui-product-dollar2" wx:if="{{ item.productPrice}}">￥</text>
-            <text class="qwui-product_current3" wx:if="{{ item.productPrice}}">{{ filter.getPrice(item.productPrice) }}</text>
-            <text class="qwui-product_decimals3" wx:if="{{ item.productPrice}}">.{{ filter.getDecimals(item.productPrice) }}</text>
+            <text class="qwui-product-dollar2">￥</text>
+            <text class="qwui-product_current3">{{ filter.getPrice(item.price.current) }}</text>
+            <text class="qwui-product_decimals3">.{{ filter.getDecimals(item.price.current) }}</text>
+          </view>
+          <view wx:if="{{config.isDisplayProductMessage}}" class="product_message5">
+            <block wx:for="{{item.message.value}}" wx:for-item="mess">
+              <view class="product_message5_message" style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
+            </block>
+          </view>
+          <view class="product_total product_total3" style="font-size:{{item.statistics.size}}rpx">
+            <van-icon custom-class="product_total_icon" name="{{item.statistics.name}}" color="{{item.statistics.color}}"/>
+            <text class="product_total_number">1000</text>
           </view>
         </view>
       </view>

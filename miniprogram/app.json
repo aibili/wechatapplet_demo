@@ -46,6 +46,7 @@
     "van-col": "/lib/vant/dist/col/index",
     "van-icon": "/lib/vant/dist/icon/index",
     "van-button": "/lib/vant/dist/button/index",
+    "van-tag": "/lib/vant/dist/tag/index",
     "NavBar":"/components/NavBar/index"
   },
   "sitemapLocation": "sitemap.json"
