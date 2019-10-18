@@ -7,9 +7,8 @@ page {
 
 .header {
   height: 220rpx;
-  background-image: url('https://qwyimg.do1.com.cn/fileweb/upload/img/1dca4756172e43318391487a5a68d59c/20190904/a547276df9f64f658ae57f4dd64d73bd.png');
+  background-image: url('https://qwyimg.do1.com.cn/fileweb/upload/img/81b69b451f5d4b13adce0d8687dc0c02/20191018/d2056b4a63f84e399fc1fe9934220b99.jpeg');
   background-size: cover;
-  background-position: -48px 0;
   background-repeat: no-repeat;  
 }
 .wrap-top {

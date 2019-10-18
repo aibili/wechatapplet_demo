@@ -21,5 +21,6 @@
   </van-grid> -->
   <CGrid></CGrid>
   <CGrid></CGrid>
+  <CSelect></CSelect>
   <CProduct></CProduct>
 </view>

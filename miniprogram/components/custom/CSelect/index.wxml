@@ -1,0 +1,8 @@
+<view class="screen_wrap">
+  <van-button custom-class="btn_size_change" hairline icon="apps-o" type="info" bind:click="showPopup">点击这里设置筛选</van-button>
+</view>
+
+<van-popup show="{{ show }}" position="top" bind:close="onClose">
+  <view>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+</van-popup>
+

@@ -6,6 +6,7 @@
     "CCrossSlip":"../../components/custom/CCrossSlip/index",
     "CImage":"../../components/custom/CImage/index",
     "CGrid":"../../components/custom/CGrid/index",
-    "CProduct":"../../components/custom/CProduct/index"
+    "CProduct":"../../components/custom/CProduct/index",
+    "CSelect":"../../components/custom/CSelect/index"
   }
 }

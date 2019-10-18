@@ -1,0 +1,6 @@
+.screen_wrap {
+  text-align: center;
+}
+.btn_size_change {
+  width: 90%;
+}
