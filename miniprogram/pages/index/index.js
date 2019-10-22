@@ -8,7 +8,8 @@ Page({
     bg: {
       color: 'rgba(255,255,255,1)'
     },
-    navbarHeight: app.globalData.navbarHeight
+    navbarHeight: app.globalData.navbarHeight,
+    list:[]
   },
  
   onLoad: function (e) {},

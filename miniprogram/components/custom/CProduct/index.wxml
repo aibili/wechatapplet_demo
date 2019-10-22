@@ -17,7 +17,7 @@
         </view>
       </view>
       <view wx:if="{{config.isDisplayProductMessage}}" class="product_message">
-        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess" wx:key="{{ mess }}">
           <view style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
         </block>
       </view>
@@ -44,7 +44,7 @@
         </view>
       </view>
       <view wx:if="{{config.isDisplayProductMessage}}" class="product_message2">
-        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess" wx:key="{{ mess }}">
           <view style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
         </block>
       </view>
@@ -65,7 +65,7 @@
         <text class="qwui-product_decimals3">.{{ filter.getDecimals(item.price.current) }}</text>
       </view>
       <view wx:if="{{config.isDisplayProductMessage}}" class="product_message3">
-        <block wx:for="{{item.message.value}}" wx:for-item="mess">
+        <block wx:for="{{item.message.value}}" wx:for-item="mess" wx:key="{{ mess }}">
           <view class="product_message3_message" style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
         </block>
       </view>
@@ -86,7 +86,7 @@
         <view class="qwui-product_title4" wx:if="{{config.isDisplayProductName}}">{{ item.productName }}</view>
         <view class="qwui-product_detail qwui-product_detail4" wx:if="{{config.isDisplayProductDetail}}">{{ item.detail.text }}</view>
         <view class="qwui-product_tag">
-          <block wx:for="{{item.tags.value}}" wx:for-item="tag">
+          <block wx:for="{{item.tags.value}}" wx:for-item="tag" wx:key="{{ tag }}">
             <van-tag wx:if="{{tag.type == 'plain'}}" plain color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
             <van-tag wx:if="{{tag.type == 'round'}}" round color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
             <van-tag wx:if="{{tag.type == 'mark'}}" mark color="{{tag.color}}" custom-class="qwui-product_tag_position">{{tag.text}}</van-tag>
@@ -123,7 +123,7 @@
             <text class="qwui-product_decimals3">.{{ filter.getDecimals(item.price.current) }}</text>
           </view>
           <view wx:if="{{config.isDisplayProductMessage}}" class="product_message5">
-            <block wx:for="{{item.message.value}}" wx:for-item="mess">
+            <block wx:for="{{item.message.value}}" wx:for-item="mess" wx:key="{{ mess }}">
               <view class="product_message5_message" style="'font-size'{{mess.size}}rpx;color:{{mess.color}}">{{mess.text}}</view>
             </block>
           </view>

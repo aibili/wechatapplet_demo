@@ -1,5 +1,5 @@
 <van-grid column-num="{{config.num}}" border="{{ config.border }}">
-  <block wx:for="{{ detail }}">
+  <block wx:for="{{ detail }}" wx:key="{{ item }}">
     <van-grid-item use-slot  wx:if="{{item.linkType == 3}}">
       <image
         mode="aspectFit"

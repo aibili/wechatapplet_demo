@@ -22,7 +22,6 @@ VantComponent({
     },
     methods: {
         updateStyle() {
-            console.log(this.text);
             if (!this.parent) {
                 return;
             }

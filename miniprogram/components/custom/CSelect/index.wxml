@@ -2,7 +2,21 @@
   <van-button custom-class="btn_size_change" hairline icon="apps-o" type="info" bind:click="showPopup">点击这里设置筛选</van-button>
 </view>
 
-<van-popup show="{{ show }}" position="top" bind:close="onClose">
-  <view>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
-</van-popup>
+<view class="sel_wrap" animation="{{animation}}">
+  <view class="sel_container">
+    <view class="sel_container_list" style="flex: 1;padding-top:{{navbarHeight}}px;overflow-y: scroll;">
+      <view class="sel_item" wx:for="{{detail}}" wx:key="{{ item }}">
+        <view class="sel_item_title">{{item.pageTitle}}</view>
+        <view class="sel_item_list">
+          <view class="list_item" wx:for="{{item.data}}" wx:key="{{ item.id }}" wx:for-item="child">{{child.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="sel_container_btn">
+      <van-button style="flex:1;" custom-class="container_btn_item" type="warning" bindtap="onClose">关闭</van-button>
+      <van-button style="flex:1;" custom-class="container_btn_item" type="default">重置</van-button>
+      <van-button style="flex:1;" custom-class="container_btn_item" type="primary">确认</van-button>
+    </view>
+  </view>
+</view>
 
