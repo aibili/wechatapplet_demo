@@ -1,3 +1,4 @@
+import util from '../../utils/util.js';
 const app = getApp();
 
 Page({
@@ -9,7 +10,8 @@ Page({
       color: 'rgba(255,255,255,1)'
     },
     navbarHeight: app.globalData.navbarHeight,
-    list:[]
+    list:[],
+    isLoad: true
   },
  
   onLoad: function (e) {},
@@ -19,5 +21,11 @@ Page({
     wx.navigateTo({
       url: '/packageA/pages/chooseDifficult/index'
     });
+  },
+  lower: util.debounce(function(e){
+    console.log(e);
+  }),
+  lowerStop(){
+    console.log('空');
   }
 })

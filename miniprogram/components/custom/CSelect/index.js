@@ -28,15 +28,18 @@ Component({
         sort: 0,
         data:[{
           id: 'paoche',
-          name:'跑车'
+          name:'跑车',
+          isSel: false
         },
         {
           id: 'paoche',
-          name:'跑车'
+          name:'跑车',
+          isSel: false
         },
         {
           id: 'paoche',
-          name:'跑车'
+          name:'跑车',
+          isSel: false
         }]
       },
       {
@@ -115,6 +118,11 @@ Component({
     },
     onClose(){
       this.animation.top("-100%").step();
+      this.setData({
+        animation: this.animation.export()
+      });
+    },
+    selItem(){
       this.setData({
         animation: this.animation.export()
       });

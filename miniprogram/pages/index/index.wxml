@@ -1,26 +1,13 @@
 <NavBar bg="{{bg}}" title="首页"></NavBar>
 <view class="wrap" style='padding-top:{{navbarHeight}}px'>
-  <!-- <view class="item-block">
-    <van-row>
-      <van-col span="8">
-        <view class="item-layout" bindtap="openItem">
-          <van-icon custom-class="iconfont fangxiang fangxiang-color" />
-          <text class="item-text">选择困难</text>
-        </view>
-      </van-col>
-    </van-row>
-  </view> -->
-  <!-- <CSwiper></CSwiper>
-  <CTitle></CTitle>
-  <CCrossSlip></CCrossSlip>
-  <CImage></CImage> -->
-  <!-- <van-grid column-num="2" square>
-    <van-grid-item icon="photo-o" text="这是导航a" />
-    <van-grid-item icon="photo-o" text="文字" />
-    <van-grid-item icon="photo-o" text="文字" />
-  </van-grid> -->
-  <CGrid></CGrid>
-  <CGrid></CGrid>
-  <CSelect></CSelect>
-  <CProduct></CProduct>
+  <scroll-view style="height:100%;" scroll-y bindscrolltolower="{{isLoad? 'lower':'lowerStop'}}">
+    <!-- <CSwiper></CSwiper>
+    <CTitle></CTitle>
+    <CCrossSlip></CCrossSlip>
+    <CImage></CImage> -->
+    <CGrid></CGrid>
+    <CGrid></CGrid>
+    <CSelect></CSelect>
+    <CProduct></CProduct>
+  </scroll-view>
 </view>

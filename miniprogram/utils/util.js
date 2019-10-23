@@ -9,6 +9,18 @@ function isIphoneX() {
   }
 }
 
+// 防抖
+function debounce(fn) {
+  let timer = null;
+  return function(){
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.call(this,...arguments);
+    },1000)
+  }
+}
+
 export default {
-  isIphoneX
+  isIphoneX,
+  debounce
 }

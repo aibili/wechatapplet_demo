@@ -53,5 +53,9 @@
   margin-bottom: 20rpx;  
   color: #676767; 
   margin-right: 40rpx;
-  
+}
+.list_item_sel {
+  background: #4487FD;
+  border-color: #4487FD;
+  color: #fff;
 }
