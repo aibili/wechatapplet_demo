@@ -57,11 +57,13 @@ Component({
         sort: 0,
         data:[{
           id: 'paoche',
-          name:'自动'
+          name:'自动',
+          isSel: false
         },
         {
           id: 'paoche',
-          name:'手动'
+          name:'手动',
+          isSel: false
         }]
       },
       {
@@ -79,15 +81,18 @@ Component({
         sort: 0,
         data:[{
           id: 'paoche',
-          name:'1年'
+          name:'1年',
+          isSel: false
         },
         {
           id: 'paoche',
-          name:'3年'
+          name:'3年',
+          isSel: false
         },
         {
           id: 'paoche',
-          name:'3年以上'
+          name:'3年以上',
+          isSel: false
         }]
       }]
     }
@@ -122,9 +127,13 @@ Component({
         animation: this.animation.export()
       });
     },
-    selItem(){
+    selItem(e){
+      let index = e.target.dataset.index;
+      let childindex = e.target.dataset.childindex;
+      let flag = this.data.detail[index].data[childindex].isSel;
+      let item = "detail["+ index + "].data["+ childindex + "].isSel"
       this.setData({
-        animation: this.animation.export()
+        [item]: !flag
       });
     }
   }

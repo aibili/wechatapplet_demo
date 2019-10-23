@@ -8,7 +8,7 @@
       <view class="sel_item" wx:for="{{detail}}" wx:key="{{ item }}">
         <view class="sel_item_title">{{item.pageTitle}}</view>
         <view class="sel_item_list">
-          <view class="list_item {{child.isSel? 'list_item_sel':''}}" wx:for="{{item.data}}" wx:key="{{ item.id }}" wx:for-item="child" bindtap="selItem">{{child.name}}</view>
+          <view class="list_item {{child.isSel? 'list_item_sel':''}}" wx:for="{{item.data}}" wx:key="{{ item.id }}" wx:for-item="child" wx:for-index="childindex" data-index="{{index}}" data-childindex="{{childindex}}" bindtap="selItem">{{child.name}}</view>
         </view>
       </view>
     </view>
@@ -19,4 +19,3 @@
     </view>
   </view>
 </view>
-
