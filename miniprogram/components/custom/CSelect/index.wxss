@@ -1,8 +1,9 @@
 .screen_wrap {
-  text-align: center;
+  background: #F9F9F9;
+  padding: 20rpx 10rpx 0;  
 }
 .btn_size_change {
-  width: 90%;
+  width: 500rpx;
 }
 .sel_wrap {
   position: fixed;
@@ -58,4 +59,22 @@
   background: #4487FD;
   border-color: #4487FD;
   color: #fff;
+}
+.sel_list {
+  display: flex;
+  flex-wrap: wrap;  
+  margin-top: 20rpx;  
+}
+.sel_list_item {
+  border: 1px solid #ccc;
+  padding: 6rpx 24rpx;
+  font-size: 30rpx;
+  background: #fff;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;    
+}
+.sel_list_item_del {
+  margin-left: 16rpx;
+  font-size: 32rpx;  
 }

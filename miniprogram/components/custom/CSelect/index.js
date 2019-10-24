@@ -32,13 +32,13 @@ Component({
           isSel: false
         },
         {
-          id: 'paoche',
-          name:'跑车',
+          id: 'xiaoche',
+          name:'小车',
           isSel: false
         },
         {
-          id: 'paoche',
-          name:'跑车',
+          id: 'lanbojini',
+          name:'兰博基尼',
           isSel: false
         }]
       },
@@ -56,12 +56,12 @@ Component({
         pageTitle: "变速箱",
         sort: 0,
         data:[{
-          id: 'paoche',
+          id: 'zidong',
           name:'自动',
           isSel: false
         },
         {
-          id: 'paoche',
+          id: 'shoudong',
           name:'手动',
           isSel: false
         }]
@@ -80,17 +80,17 @@ Component({
         pageTitle: "车龄",
         sort: 0,
         data:[{
-          id: 'paoche',
+          id: '1nian',
           name:'1年',
           isSel: false
         },
         {
-          id: 'paoche',
+          id: '3nian',
           name:'3年',
           isSel: false
         },
         {
-          id: 'paoche',
+          id: '3nianyishang',
           name:'3年以上',
           isSel: false
         }]
@@ -103,7 +103,8 @@ Component({
    */
   data: {
     navbarHeight: app.globalData.navbarHeight,
-    animation:''
+    animation:'',
+    selList:[]
   },
 
   ready(){
@@ -127,13 +128,49 @@ Component({
         animation: this.animation.export()
       });
     },
+    onReset(){
+      if(!this.data.selList.length) return;
+      this.data.detail.forEach((val,index) => {
+        val.data.forEach((_val,_index) => {
+          _val.isSel = false
+        })
+      });
+      this.setData({
+        detail: this.data.detail,
+        selList:[]
+      });
+    },
+    onSure(){
+      this.onClose();
+    },
     selItem(e){
       let index = e.target.dataset.index;
       let childindex = e.target.dataset.childindex;
-      let flag = this.data.detail[index].data[childindex].isSel;
-      let item = "detail["+ index + "].data["+ childindex + "].isSel"
+      let item = this.data.detail[index].data[childindex];
+      
+      if(!item.isSel){
+        this.data.selList.push(item)
+      }else{
+        this.data.selList.forEach((val,ind) => {
+          if(val.id == item.id){
+            this.data.selList.splice(ind,1)
+          }
+        });
+      }
+      let target = "detail["+ index + "].data["+ childindex + "].isSel";
       this.setData({
-        [item]: !flag
+        [target]: !item.isSel,
+        selList: this.data.selList
+      });
+    },
+    delSel(e){
+      this.data.selList.forEach((val,ind) => {
+        if(val.id == e.currentTarget.dataset.id){
+          this.data.selList.splice(ind,1)
+        }
+      });
+      this.setData({
+        selList: this.data.selList
       });
     }
   }
