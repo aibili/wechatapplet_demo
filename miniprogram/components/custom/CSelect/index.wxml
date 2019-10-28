@@ -3,7 +3,7 @@
     <van-button custom-class="btn_size_change" hairline icon="apps-o" type="info" bind:click="showPopup">点击这里设置筛选</van-button>
   </view>
   <view class="sel_list">
-    <view class="sel_list_item" wx:for="{{selList}}" bindtap="delSel" data-id="{{item.id}}">{{item.name}}<text class="sel_list_item_del">x</text></view>
+    <view class="sel_list_item" wx:for="{{selList}}" bindtap="delSel" data-item="{{item}}">{{item.name}}<text class="sel_list_item_del">x</text></view>
   </view>
 </view>
 

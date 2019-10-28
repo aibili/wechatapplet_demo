@@ -1,13 +1,15 @@
 <NavBar bg="{{bg}}" title="首页"></NavBar>
 <view class="wrap" style='padding-top:{{navbarHeight}}px'>
   <scroll-view style="height:100%;" scroll-y bindscrolltolower="{{isLoad? 'lower':'lowerStop'}}">
-    <!-- <CSwiper></CSwiper>
-    <CTitle></CTitle>
-    <CCrossSlip></CCrossSlip>
-    <CImage></CImage> -->
-    <CGrid></CGrid>
-    <CGrid></CGrid>
-    <CSelect></CSelect>
-    <CProduct></CProduct>
+    <view wx:for="{{ detail }}" wx:key="{{ item }}">
+      <CSwiper></CSwiper>
+      <CTitle></CTitle>
+      <CCrossSlip></CCrossSlip>
+      <CImage></CImage>
+      <CGrid></CGrid>
+      <CGrid></CGrid>
+      <CSelect></CSelect>
+      <CProduct></CProduct>
+    </view>
   </scroll-view>
 </view>

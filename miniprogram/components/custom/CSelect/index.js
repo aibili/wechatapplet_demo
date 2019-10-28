@@ -141,6 +141,7 @@ Component({
       });
     },
     onSure(){
+      console.log(this.data.selList);
       this.onClose();
     },
     selItem(e){
@@ -149,7 +150,11 @@ Component({
       let item = this.data.detail[index].data[childindex];
       
       if(!item.isSel){
-        this.data.selList.push(item)
+        this.data.selList.push({
+          index: index,
+          childindex: childindex,
+          ...item
+        })
       }else{
         this.data.selList.forEach((val,ind) => {
           if(val.id == item.id){
@@ -164,13 +169,15 @@ Component({
       });
     },
     delSel(e){
+      let item = e.currentTarget.dataset.item
       this.data.selList.forEach((val,ind) => {
-        if(val.id == e.currentTarget.dataset.id){
+        if(val.id == item.id){
           this.data.selList.splice(ind,1)
         }
       });
       this.setData({
-        selList: this.data.selList
+        selList: this.data.selList,
+        ["detail["+ item.index + "].data["+ item.childindex + "].isSel"]:false
       });
     }
   }

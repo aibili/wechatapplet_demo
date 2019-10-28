@@ -13,8 +13,9 @@ function isIphoneX() {
 function debounce(fn) {
   let timer = null;
   return function(){
-    if(timer) clearTimeout(timer);
+    if(timer) return;
     timer = setTimeout(() => {
+      timer = null;
       fn.call(this,...arguments);
     },1000)
   }
