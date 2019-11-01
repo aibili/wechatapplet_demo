@@ -4,24 +4,21 @@
     properties: {
       config: {
         type: Object,
-        value: {
-          type: '4',
-
-        }
+        value: {}
       },
       detail: {
         type: Object,
-        value: {},
+        value: [],
         observer: 'getContent'
       }
     },
     data: {
-      content: '标题'
+      content: ''
     },
     methods: {
       getContent() {
         this.setData({
-          content: this.data.detail.content.replace(/\n/g, ' ')
+          content: this.data.config.content.replace(/\n/g, ' ')
         });
       },
       openLink() {

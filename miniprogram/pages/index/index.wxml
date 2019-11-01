@@ -2,14 +2,13 @@
 <view class="wrap" style='padding-top:{{navbarHeight}}px'>
   <scroll-view style="height:100%;" scroll-y bindscrolltolower="{{isLoad? 'lower':'lowerStop'}}">
     <view wx:for="{{ detail }}" wx:key="{{ item }}">
-      <CSwiper></CSwiper>
-      <CTitle></CTitle>
-      <CCrossSlip></CCrossSlip>
-      <CImage></CImage>
-      <CGrid></CGrid>
-      <CGrid></CGrid>
-      <CSelect></CSelect>
-      <CProduct></CProduct>
+      <CSwiper wx:if="{{item.componentName == 'cswiper'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CSwiper>
+      <CTitle wx:if="{{item.componentName == 'ctitle'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CTitle>
+      <CCrossSlip wx:if="{{item.componentName == 'ccross_slip'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CCrossSlip>
+      <CImage wx:if="{{item.componentName == 'cimage'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CImage>
+      <CGrid wx:if="{{item.componentName == 'cgrid'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CGrid>
+      <CSelect wx:if="{{item.componentName == 'cselect'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CSelect>
+      <CProduct wx:if="{{item.componentName == 'cproduct'}}" config="{{item.cofig}}" detail="{{item.detail}}"></CProduct>
     </view>
   </scroll-view>
 </view>

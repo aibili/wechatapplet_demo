@@ -1,13 +1,13 @@
 <van-grid column-num="{{config.num}}" border="{{ config.border }}">
   <block wx:for="{{ detail }}" wx:key="{{ item }}">
-    <van-grid-item use-slot  wx:if="{{item.linkType == 3}}">
+    <van-grid-item use-slot  wx:if="{{item.navType == 3}}">
       <image
         mode="aspectFit"
         style="width: 100%; height: 108rpx;"
         src="{{item.src}}"
       />
-      <text class="grid_text">{{item.linkTargetName}}</text>
+      <text class="grid_text">{{item.navName}}</text>
     </van-grid-item>
-    <van-grid-item wx:if="{{item.linkType == 2}}" icon="{{item.linkTargetId}}" text="{{item.linkTargetName}}" size="{{fixSize? '56px':''}}" />
+    <van-grid-item wx:if="{{item.navType == 2}}" icon="{{item.customPic}}" text="{{item.navName}}" size="{{fixSize? '56px':''}}" />
   </block>
 </van-grid>

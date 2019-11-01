@@ -2,7 +2,7 @@
   <!-- 一行多张 -->
   <view wx:if="{{config.type!==5&&config.type!==6}}" class='qwui-website_image_1'>
     <view wx:for="{{config.type}}" wx:key="{{index}}" style='flex:1;position:relative;' class='qwui-website_image_1_item'>
-      <image wx:if="{{detail[index].src}}" bindtap='openLink' data-img_w="{{(750-detail[index].mgRight*(config.type-1))/config.type}}" bindload="swiperImgLoad" class="qwui-honor_img" lazy-load mode="aspectFill" data-index="{{index}}"
+      <image wx:if="{{detail[index].src}}" bindtap='openLink' data-img_w="{{750/config.type}}" bindload="swiperImgLoad" class="qwui-honor_img" lazy-load mode="aspectFill" data-index="{{index}}"
         wx:key="{{ detail[index] }}" src="{{ detail[index].src }}" style='height:{{imgHeight}}rpx;'>
       </image>
       <view wx:else></view>

@@ -7,94 +7,11 @@ Component({
   properties: {
     config: {
       type: Object,
-      value: {
-        type:'3'
-      }
+      value: {}
     },
     detail: {
       type: Object,
-      value: [{
-        componentId: "519d0ee8643b4c129d004c50f9e6b11b",
-        id: "fd88909b29d84ad388197a04a384ca5d",
-        linkTargetId: "",
-        linkTargetName: "",
-        linkType: 3,
-        linkUrl: "",
-        mgRight: "",
-        orgId: "81b69b451f5d4b13adce0d8687dc0c02",
-        pageId: "",
-        pageName: "",
-        pageTitle: "车辆类型",
-        sort: 0,
-        data:[{
-          id: 'paoche',
-          name:'跑车',
-          isSel: false
-        },
-        {
-          id: 'xiaoche',
-          name:'小车',
-          isSel: false
-        },
-        {
-          id: 'lanbojini',
-          name:'兰博基尼',
-          isSel: false
-        }]
-      },
-      {
-        componentId: "519d0ee8643b4c129d004c50f9e6b11b",
-        id: "fd88909b29d84ad388197a04a384ca5d",
-        linkTargetId: "",
-        linkTargetName: "",
-        linkType: 3,
-        linkUrl: "",
-        mgRight: "",
-        orgId: "81b69b451f5d4b13adce0d8687dc0c02",
-        pageId: "",
-        pageName: "",
-        pageTitle: "变速箱",
-        sort: 0,
-        data:[{
-          id: 'zidong',
-          name:'自动',
-          isSel: false
-        },
-        {
-          id: 'shoudong',
-          name:'手动',
-          isSel: false
-        }]
-      },
-      {
-        componentId: "519d0ee8643b4c129d004c50f9e6b11b",
-        id: "fd88909b29d84ad388197a04a384ca5d",
-        linkTargetId: "",
-        linkTargetName: "",
-        linkType: 3,
-        linkUrl: "",
-        mgRight: "",
-        orgId: "81b69b451f5d4b13adce0d8687dc0c02",
-        pageId: "",
-        pageName: "",
-        pageTitle: "车龄",
-        sort: 0,
-        data:[{
-          id: '1nian',
-          name:'1年',
-          isSel: false
-        },
-        {
-          id: '3nian',
-          name:'3年',
-          isSel: false
-        },
-        {
-          id: '3nianyishang',
-          name:'3年以上',
-          isSel: false
-        }]
-      }]
+      value: []
     }
   },
 
