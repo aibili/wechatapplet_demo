@@ -6,6 +6,7 @@ Page({
    */
   data: {
     navbarHeight: app.globalData.navbarHeight,
+    detail:[]
   },
 
   /**
@@ -62,5 +63,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  selectPart(e){
+    let type = e.currentTarget.dataset.type;
+    this.setData({
+      detail:[{
+        componentName:'cswiper',
+        cofig:{
+          type:'3'
+        },
+        detail:[{
+          id: "fd88909b29d84ad388197a04a384ca5d",
+          src: "https://qwyimg.do1.com.cn/fileweb/upload/img/81b69b451f5d4b13adce0d8687dc0c02/20191010/6e5e4943a2a3451db7cc28d60d609608.jpeg"
+        },
+        {
+          id: "fd88909b29d84ad388197a04a384ca5d",
+          src: "https://qwyimg.do1.com.cn/fileweb/upload/img/81b69b451f5d4b13adce0d8687dc0c02/20191010/c6a78b4b2d384be78c489bb4d0521d05.jpeg"
+        },
+        {
+          id: "fd88909b29d84ad388197a04a384ca5d",
+          src: "https://qwyimg.do1.com.cn/fileweb/upload/img/81b69b451f5d4b13adce0d8687dc0c02/20191010/f2c228e40b96430e8b82a4a844a69a8e.jpeg"
+        }]
+      }]
+    })
   }
 })

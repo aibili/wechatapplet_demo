@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "CSwiper":"../../components/custom/CSwiper/index",
+    "CTitle":"../../components/custom/CTitle/index",
+    "CCrossSlip":"../../components/custom/CCrossSlip/index",
+    "CImage":"../../components/custom/CImage/index",
+    "CGrid":"../../components/custom/CGrid/index",
+    "CProduct":"../../components/custom/CProduct/index",
+    "CSelect":"../../components/custom/CSelect/index"
+  }
 }

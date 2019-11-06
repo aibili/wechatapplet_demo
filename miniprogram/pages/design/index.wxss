@@ -4,9 +4,30 @@
   font-size: 60rpx;
   padding: 40rpx 0;
 }
+.components-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
 .design-show_wrap {
   
 }
 .design-btn {}
-.design-item_wrap {}
-.design-item {}
+.design-item_wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 68px;
+  border-left: 1px solid #ccc;
+  height: 100vh;
+  background: #ccc;
+  overflow-y: scroll;
+}
+.design-item {
+  border-bottom: 1px solid #fff;
+  padding: 15px 5px;
+  text-align: center;
+}
