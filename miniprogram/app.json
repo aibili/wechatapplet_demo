@@ -1,18 +1,19 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/my/index"
+    "pages/design/index",
+    "pages/my/index",
+    "pages/index/index"
   ],
-  "subpackages":[
+  "subpackages": [
     {
-      "root":"packageA",
-      "pages":[
+      "root": "packageA",
+      "pages": [
         "pages/chooseDifficult/index"
       ]
     },
     {
-      "root":"packageB",
-      "pages":[]
+      "root": "packageB",
+      "pages": []
     }
   ],
   "window": {
@@ -22,32 +23,13 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
-  "tabBar": {
-    "color": "#000",
-    "selectedColor": "#1296db",
-    "backgroundColor": "#fff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath":"/images/png/home.png",
-        "selectedIconPath":"/images/png/home_sel.png"
-      },
-      {
-        "pagePath": "pages/my/index",
-        "text": "我的",
-        "iconPath":"/images/png/my.png",
-        "selectedIconPath":"/images/png/my_sel.png"
-      }
-    ]
-  },
   "usingComponents": {
     "van-row": "/lib/vant/dist/row/index",
     "van-col": "/lib/vant/dist/col/index",
     "van-icon": "/lib/vant/dist/icon/index",
     "van-button": "/lib/vant/dist/button/index",
     "van-tag": "/lib/vant/dist/tag/index",
-    "NavBar":"/components/NavBar/index",
+    "NavBar": "/components/NavBar/index",
     "van-popup": "/lib/vant/dist//popup/index"
   },
   "sitemapLocation": "sitemap.json"

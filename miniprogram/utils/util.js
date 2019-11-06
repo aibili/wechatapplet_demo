@@ -9,7 +9,7 @@ function isIphoneX() {
   }
 }
 
-// 防抖
+// 节流
 function debounce(fn) {
   let timer = null;
   return function(){

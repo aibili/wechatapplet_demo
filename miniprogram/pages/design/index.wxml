@@ -1,0 +1,16 @@
+<NavBar title="页面设计"></NavBar>
+<view class="design-show_wrap" style='padding-top:{{navbarHeight}}px'>
+  
+</view>
+<view class="design-btn">
+  <view>+</view>
+  <view class="design-item_wrap">
+    <view class="design-item">图片滑动组件</view>
+    <view class="design-item">格子组件</view>
+    <view class="design-item">图片组件</view>
+    <view class="design-item">产品组件</view>
+    <view class="design-item">筛选组件</view>
+    <view class="design-item">轮播组件</view>
+    <view class="design-item">标题组件</view>
+  </view>
+</view>

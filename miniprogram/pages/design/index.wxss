@@ -1,0 +1,12 @@
+.design-btn {
+  border: 1px dashed #ccc;
+  text-align: center;
+  font-size: 60rpx;
+  padding: 40rpx 0;
+}
+.design-show_wrap {
+  
+}
+.design-btn {}
+.design-item_wrap {}
+.design-item {}
