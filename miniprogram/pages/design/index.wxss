@@ -7,7 +7,7 @@
 .components-mask {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.4);
@@ -19,12 +19,16 @@
 .design-item_wrap {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   padding-top: 68px;
   border-left: 1px solid #ccc;
   height: 100vh;
   background: #ccc;
   overflow-y: scroll;
+  transition: right .5s linear 0s;
+}
+.design-item_wrap_show {
+  right: 0;
 }
 .design-item {
   border-bottom: 1px solid #fff;
